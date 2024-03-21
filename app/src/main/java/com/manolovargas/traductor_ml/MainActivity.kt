@@ -34,18 +34,13 @@ private var titulo_idioma_origen= "Español"
 private var codigo_idioma_destino= "en"
 private var titulo_idioma_destino= "Ingles"
 
-
-
-
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         InicializarVistas()
         IdiomasDisponibles()
 
-        Btn_Idioma_Elegido.setOnClickListener {
+        Btn_Elegir_Idioma.setOnClickListener {
             //Toast.makeText(this, "Idioma elegido", Toast.LENGTH_SHORT).show()
 
             ElegirIdiomaOrigen()
@@ -107,13 +102,13 @@ private var titulo_idioma_destino= "Ingles"
 
         popupMenu.show()
 
-        popupMenu.setOnMenuItemClickListener { menuItem ->
+        popupMenu.setOnMenuItemClickListener{ menuItem ->
             val position = menuItem.itemId
 
             codigo_idioma_origen= IdiomaArrayList!![position].codigo_idioma
             titulo_idioma_origen= IdiomaArrayList!![position].titulo_idioma
 
-            Btn_Elegir_Idioma.text = IdiomaArrayList!![position].titulo_idioma
+            Btn_Elegir_Idioma.text = titulo_idioma_origen
             Et_Idioma_Origen.hint = " Ingrese texto en $titulo_idioma_origen "
 
             Log.d(REGISTRO, "ElegirIdiomaOrigen: codigo_idioma_origen $codigo_idioma_origen")
