@@ -12,7 +12,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/botonoes_linear"
+        android:layout_above="@+id/botones_linear"
         android:layout_marginBottom="-19dp">
 
         <LinearLayout
@@ -34,6 +34,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
                 android:gravity="start"
+                android:fontFamily="@font/lato_light"
                 android:hint="@string/Et_Idioma_Origen"
                 android:minHeight="100dp"
                 android:textSize="18sp" />
@@ -44,6 +45,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/Tv_Idioma_Destino"
+                android:fontFamily="@font/lato_italic"
                 android:textSize="18sp"
                 android:textStyle="bold|italic" />
 
@@ -84,6 +86,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/Btn_Idioma_Elegido"
+            android:fontFamily="@font/lato_bold"
             app:cornerRadius="10dp"/>
 
 
@@ -96,6 +99,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:text="@string/Btn_Traducir"
+        android:fontFamily="@font/lato_bold"
         app:cornerRadius="10dp"
         app:icon="@drawable/ic_traducir"/>
 
