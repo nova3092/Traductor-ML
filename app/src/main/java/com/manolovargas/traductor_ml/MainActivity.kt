@@ -1,10 +1,14 @@
 package com.manolovargas.traductor_ml
 
+import android.app.Dialog
 import android.app.ProgressDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
+import android.widget.Button
 import android.widget.EditText
 import android.widget.PopupMenu
 import android.widget.TextView
@@ -221,4 +225,52 @@ private var titulo_idioma_destino= "Ingles"
 
     }
 
+    private fun MostraDialogo() {
+
+
+        val Btn_entendido: Button
+        val dialog = Dialog(this@MainActivity)
+
+        dialog.setContentView(R.layout.custom_dialog)
+        Btn_entendido = dialog.findViewById(R.id.Btn_entendido)
+
+        Btn_entendido.setOnClickListener {
+
+            dialog.dismiss()
+        }
+
+
+        dialog.show()
+        dialog.setCanceledOnTouchOutside(false)
+
+    }
+
+
+    //Creamos el menu
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        val inflater : MenuInflater = menuInflater
+        inflater.inflate(R.menu.mi_menu, menu)
+        return true
+    }
+
+
+    //Seleccioamos un elemento del mundo
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.Menu_Limpiar_texto -> {
+
+                Et_Idioma_Origen.setText("")
+                Et_Idioma_Origen.hint = " Ingrese texto "
+                Tv_Idioma_Destino.text = "Traduccion"
+
+
+                true
+            }
+            R.id.Menu_Informacion -> {
+                MostraDialogo()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
 }
